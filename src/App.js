@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Tables from "./Tables";
+import Buttons from "./Buttons";
+
+import "./App.css";
 
 function App() {
+  const [good, setGood] = useState(0);
+  const [bad, setBad] = useState(0);
+  const [nuetral, setNeutral] = useState(0);
+  const [total, setTotal] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Give FeedBack About our Service At UniCafe.</h2>
+      <div className="app-body">
+        <Buttons />
+        <Tables good={good} bad={bad} nuetral={nuetral} total={total} />
+      </div>
     </div>
   );
 }
